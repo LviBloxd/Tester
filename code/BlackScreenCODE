@@ -1,0 +1,19 @@
+using System;
+using System.Diagnostics;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        ProcessStartInfo psi = new ProcessStartInfo
+        {
+            FileName = "powershell.exe",
+            // Gaat fullscreen, veranderd bg naar zwart, blijft voor 5 seconden.
+            Arguments = "-NoLogo -WindowStyle Maximized -Command \"$host.UI.RawUI.BackgroundColor = 'Black'; Clear-Host; [Console]::CursorVisible = $false; Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('{F11}'); Start-Sleep -Seconds 5\"",
+            UseShellExecute = true
+        };
+
+        Process.Start(psi);
+    }
+}
