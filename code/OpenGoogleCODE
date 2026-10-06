@@ -1,0 +1,22 @@
+using System;
+using System.Diagnostics;
+using System.Threading;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        for (int i = 0; i < 1; i++)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "chrome.exe",
+                Arguments = "--new-window --kiosk https://media.istockphoto.com/id/1373023672/photo/portrait-of-an-adult-bald-african-man-with-down-syndrome-on-a-forest-background.jpg?s=612x612&w=is&k=20&c=aj_VFZyxlKASWzH8bSE0EYwGrLNk4UXfTpB27Q9q6x0=",
+                UseShellExecute = true
+            });
+
+        }
+        Console.WriteLine("Loop finished after 2 seconds.");
+    }
+}
